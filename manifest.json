@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix rewind x seconds",
+  "description": "Netflix rewind or skip a parameter seconds",
+  "version": "1.0",
+  "permissions": [
+    "storage","scripting"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "netflix-icon.png"
+  }
+  ,
+  "content_scripts": [
+	{
+		"matches": ["*://*.netflix.com/*"],
+		"js": ["inject.js"]
+	}],
+	"host_permissions": ["<all_urls>"]
+}
