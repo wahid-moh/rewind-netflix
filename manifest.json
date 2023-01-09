@@ -4,7 +4,7 @@
   "description": "Netflix rewind or skip a parameter seconds",
   "version": "1.0",
   "permissions": [
-    "storage","scripting"
+    "storage"
   ],
   "action": {
     "default_popup": "index.html",
