@@ -20,12 +20,24 @@ span{
 p {
 	margin-bottom:5px;
 }
+#backKey {
+	width: 3ch;
+	margin-right: 20px;
+}
+#forwardKey {
+	width: 3ch;
+}
 </style>
 </head>
   <body>
     Select seconds :<span id="secondsSpan"></span>seconds
 	<button type="button" id="decrementBtn">-</button>
 	<button type="button" id="incrementBtn">+</button>
+	<p>Select rewind shortcut keys:</p>
+	<p>
+		<label>Back: <input id="backKey" maxlength="1"></label>
+		<label>Forward: <input id="forwardKey" maxlength="1"></label>
+	</p>
 	<p>Reload Netflix web page to set last modification</p>
 	<script src="script.js"></script>
   </body>

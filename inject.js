@@ -1,6 +1,10 @@
 var secondsSpan = 5;
-chrome.storage.local.get(["secondsSpan"]).then((result) => {
-	if(typeof result.secondsSpan == 'number') secondsSpan = result.secondsSpan
+var backKey = "<";
+var forwardKey = ">";
+chrome.storage.local.get(["secondsSpan", "backKey", "forwardKey"]).then((result) => {
+	if(typeof result.secondsSpan == 'number') secondsSpan = result.secondsSpan;
+	if (result.backKey) backKey = result.backKey;
+	if (result.forwardKey) forwardKey = result.forwardKey;
 	
 	secondsSpan = secondsSpan * 1000
 
@@ -12,11 +16,11 @@ chrome.storage.local.get(["secondsSpan"]).then((result) => {
 				const videoPlayer = netflix.appContext.state.playerApp.getAPI().videoPlayer;
 				const player = videoPlayer.getVideoPlayerBySessionId(videoPlayer.getAllPlayerSessionIds()[0]);
 				
-				if(e.key == '<'){
-					player.seek(player.getCurrentTime()-`+secondsSpan+`)
+				if(e.key == '${backKey}'){
+					player.seek(player.getCurrentTime()-${secondsSpan})
 				}
-				else if(e.key == '>'){
-					player.seek(player.getCurrentTime()+`+secondsSpan+`)
+				else if(e.key == '${forwardKey}'){
+					player.seek(player.getCurrentTime()+${secondsSpan})
 				}
 			}
 			

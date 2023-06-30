@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Netflix rewind x seconds",
   "description": "Netflix rewind or skip a parameter seconds",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": [
     "storage"
   ],
